@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nadia Ben Youssef · Data Scientist, Data Analyst &amp; Business Analyst</title>
+<meta name="description" content="Portfolio of Nadia Ben Youssef: machine learning, NLP, RAG systems, dashboards and decision-support tools.">
+<meta name="theme-color" content="#0A1A3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Change the colors here only */
+:root{
+  --bg:#0A1A3A; --bg2:#0E2250; --surface:#12295C; --line:#27407A;
+  --ink:#EAF0FB; --muted:#A3B4D6; --accent:#8CB8FF; --accent-ink:#0A1A3A;
+  --head:'Sora',system-ui,sans-serif; --body:'Source Sans 3',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+.nav{position:sticky;top:0;z-index:5;background:rgba(10,26,58,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:1rem}
+.nav strong{font:700 1rem var(--head)}
+.nav nav{display:flex;gap:1.3rem;font-size:.95rem}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:.7rem 1.2rem;border-radius:999px;border:1px solid var(--accent)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.badge{display:inline-block;border:1px solid var(--line);color:var(--muted);font-size:.9rem;padding:.3rem .8rem;border-radius:999px;margin-bottom:1.5rem}
+.hero{padding:4.5rem 0 3.5rem}
+.hero .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
+h1{font:700 clamp(2.4rem,6vw,4.2rem)/1.05 var(--head);margin:0 0 1.2rem;letter-spacing:-.025em}
+h1 span{color:var(--accent)}
+.lead{font-size:1.2rem;color:var(--muted);max-width:33em;margin:0 0 1.75rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:24px;background:linear-gradient(160deg,var(--surface),var(--bg2));border:1px solid var(--line);display:grid;place-items:center;font:700 4rem var(--head);color:var(--accent);overflow:hidden}
+.portrait img,.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3.5rem}
+.stat{border-top:2px solid var(--accent);padding-top:.8rem}
+.stat b{display:block;font:700 1.9rem var(--head)}
+.stat span{color:var(--muted);font-size:.95rem}
+.along{border-block:1px solid var(--line);padding:1rem 0;color:var(--muted)}
+.along .wrap{display:flex;flex-wrap:wrap;gap:.4rem 2rem;justify-content:center;font-size:.95rem}
+section{padding:4.5rem 0}
+h2{font:700 clamp(1.8rem,4vw,2.5rem)/1.15 var(--head);margin:0 0 .6rem;letter-spacing:-.015em}
+.sub{color:var(--muted);margin:0 0 2rem;max-width:40em}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;color:var(--muted)}
+.about p:first-of-type{color:var(--ink)}
+dl{margin:0;display:grid;gap:1rem;align-content:start}
+dt{font-size:.85rem;color:var(--muted)}
+dd{margin:0;font-weight:600}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.tabs button{font:600 .95rem var(--body);padding:.5rem 1rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--accent-ink);border-color:var(--ink)}
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
+.card.hide{display:none}
+.card .ctx{font-size:.88rem;color:var(--accent);margin-bottom:.4rem}
+.card h3{font:700 1.1rem/1.3 var(--head);margin:0 0 .6rem}
+.card p{margin:0 0 1rem;color:var(--muted)}
+.card a.more{display:inline-block;margin-top:1rem;font-weight:600;color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.tags li{border:1px solid var(--line);font-size:.85rem;padding:.15rem .6rem;border-radius:6px;color:var(--ink)}
+.band{background:var(--bg2);border-block:1px solid var(--line)}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.services .card{background:transparent}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2.5rem;padding:0;list-style:none}
+.steps li{border-left:2px solid var(--accent);padding-left:1rem}
+.steps b{display:block;font-family:var(--head)}
+.steps span{color:var(--muted);font-size:.95rem}
+.panel[hidden]{display:none}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:190px 1fr;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.tl .when{color:var(--muted);font-size:.95rem}
+.tl h3{font:700 1.08rem var(--head);margin:0}
+.tl .role{color:var(--accent);font-weight:600;margin:.1rem 0 .5rem}
+.tl ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.tl small{display:block;color:var(--muted)}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.75rem}
+.tools h3{font:700 1rem var(--head);margin:0 0 .6rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+figure{margin:0}
+.ph{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(135deg,var(--surface),var(--surface) 12px,var(--bg2) 12px,var(--bg2) 24px);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);font-size:.85rem}
+.badge-photo{position:absolute;left:.7rem;top:.7rem;z-index:1;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:.8rem;padding:.15rem .6rem;border-radius:999px}
+figcaption{margin-top:.7rem;font-weight:600}
+figcaption small{display:block;font-weight:400;color:var(--muted)}
+.contact{text-align:center}
+.contact .sub{margin-inline:auto}
+.contact .cta{justify-content:center}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);text-align:center}
+@media (max-width:760px){
+  .nav nav{display:none}
+  .hero .grid,.about{grid-template-columns:1fr}
+  .portrait{max-width:260px;order:-1;font-size:3rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .tl li{grid-template-columns:1fr;gap:.4rem}
+  section{padding:3.2rem 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <strong>Nadia Ben Youssef</strong>
+  <nav aria-label="Main"><a href="#about">About</a><a href="#work">Work</a><a href="#roles">Profiles</a><a href="#experience">Experience</a><a href="#moments">Moments</a></nav>
+  <a class="btn" href="#contact">Let's talk</a>
+</div></header>
+
+<main>
+<div class="wrap hero"><div class="grid">
+  <div>
+    <span class="badge">Open to Data Scientist, Data Analyst and Business Analyst roles</span>
+    <h1>Turning <span>data</span> into decisions people can trust.</h1>
+    <p class="lead">I'm Nadia, a data scientist with an M.Sc. in Data Science and AI from Paris Dauphine – PSL. I build machine learning models, RAG assistants and dashboards, from the first question to a tool people actually use.</p>
+    <div class="cta"><a class="btn" href="#work">See my work</a><a class="btn ghost" href="#contact">Contact me</a></div>
+  </div>
+  <!-- Photo: put your picture in the images folder and name it photo.jpg -->
+  <div class="portrait" aria-label="Portrait of Nadia Ben Youssef">NB<img src="images/photo.jpg" alt="Nadia Ben Youssef" onerror="this.remove()"></div>
+</div>
+<div class="stats">
+  <div class="stat"><b>4</b><span>professional experiences in data</span></div>
+  <div class="stat"><b>2nd</b><span>place, AI hackathon on care and culture</span></div>
+  <div class="stat"><b>M.Sc.</b><span>Data Science &amp; AI, Dauphine – PSL</span></div>
+  <div class="stat"><b>3</b><span>languages: French, English, Spanish</span></div>
+</div></div>
+
+<div class="along"><div class="wrap">
+  <span>Paris Dauphine – PSL</span><span>BNP Paribas</span><span>SDCG</span><span>iTransform365</span><span>HLI Consulting</span><span>Dataiku</span><span>AWS Academy</span>
+</div></div>
+
+<section id="about"><div class="wrap about">
+  <div>
+    <h2>I like data that leads somewhere</h2>
+    <p>My work sits between technical depth and business needs. I've built RAG pipelines that read regulatory documents, dashboards that track financial performance, and machine learning models compared on clear metrics.</p>
+    <p>I trained in business intelligence first, then specialised in machine learning, deep learning, NLP and generative AI at Paris Dauphine – PSL. That mix lets me talk to both the people who own the question and the people who own the data.</p>
+    <p>Outside of work, I've been active in student life: communication lead and deputy secretary at Club Tunis Méditerranée, and member of the Dauphine student office.</p>
+  </div>
+  <dl>
+    <div><dt>Education</dt><dd>M.Sc. Data Science &amp; AI, Paris Dauphine – PSL</dd></div>
+    <div><dt>Latest role</dt><dd>Data Consultant, SDCG</dd></div>
+    <div><dt>Languages</dt><dd>French, English, Spanish</dd></div>
+    <div><dt>Focus</dt><dd>Machine learning, NLP, RAG, business intelligence</dd></div>
+  </dl>
+</div></section>
+
+<section id="work" class="band"><div class="wrap">
+  <h2>Selected work</h2>
+  <p class="sub">Projects from internships, a consulting role and my master's. Filter by the profile you're hiring for.</p>
+  <div class="tabs" role="group" aria-label="Filter projects">
+    <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="da" aria-pressed="false">Data Analyst</button>
+    <button type="button" data-f="ds" aria-pressed="false">Data Scientist</button>
+    <button type="button" data-f="ba" aria-pressed="false">Business Analyst</button>
+  </div>
+  <div class="projects">
+    <article class="card" data-roles="ds da ba"><div class="ctx">BNP Paribas IMEX · 2025</div><h3>Regulatory document analysis with RAG</h3>
+      <p>A GPT-4 pipeline that flags anomalies, enriches data and produces a structured Excel deliverable, with a Streamlit interface.</p>
+      <ul class="tags"><li>RAG</li><li>GPT-4</li><li>Streamlit</li><li>Excel</li></ul></article>
+    <article class="card" data-roles="da ba"><div class="ctx">SDCG · 2025–2026</div><h3>Financial tracking dashboards</h3>
+      <p>Dashboards to monitor financial performance, plus an intelligent tool that extracts data from financial documents automatically.</p>
+      <ul class="tags"><li>Dashboards</li><li>Data extraction</li><li>Finance</li></ul></article>
+    <article class="card" data-roles="ds"><div class="ctx">Personal project</div><h3>Medical chatbot</h3>
+      <p>An assistant that answers medical questions from documents, built on a RAG architecture with a Streamlit front end.</p>
+      <ul class="tags"><li>GCP</li><li>LangChain</li><li>Gemini 1.5 Pro</li><li>Streamlit</li></ul>
+      <a class="more" href="#">View project</a><!-- TODO: add link --></article>
+    <article class="card" data-roles="ds"><div class="ctx">Personal project</div><h3>End-to-end NLP pipeline</h3>
+      <p>Scraping, annotation and model training on medical articles from PubMed.</p>
+      <ul class="tags"><li>NLP</li><li>Scraping</li><li>Annotation</li></ul>
+      <a class="more" href="#">View project</a><!-- TODO: add link --></article>
+    <article class="card" data-roles="ds da"><div class="ctx">Academic project</div><h3>Breast cancer prediction</h3>
+      <p>Several machine learning algorithms compared on the Coimbra dataset to find the most reliable approach.</p>
+      <ul class="tags"><li>Scikit-learn</li><li>Classification</li><li>Model evaluation</li></ul></article>
+    <article class="card" data-roles="ds da"><div class="ctx">iTransform365 · 2024</div><h3>Prioritising countries for humanitarian aid</h3>
+      <p>K-Means and hierarchical clustering on socio-economic indicators, plus a churn use case with model comparison.</p>
+      <ul class="tags"><li>Clustering</li><li>Churn</li><li>Python</li></ul></article>
+    <article class="card" data-roles="ba da"><div class="ctx">HLI Consulting · 2023</div><h3>End-to-end decision-support solution</h3>
+      <p>A complete business intelligence solution built with SSIS, SSMS and Power BI.</p>
+      <ul class="tags"><li>SSIS</li><li>SQL Server</li><li>Power BI</li></ul></article>
+  </div>
+</div></section>
+
+<section id="roles"><div class="wrap">
+  <h2>Three ways I can help</h2>
+  <p class="sub">The same foundations, applied to the role you need.</p>
+  <div class="services">
+    <div class="card"><h3>Data Analyst</h3><p>Clean data, build dashboards and make performance easy to read, with Power BI, Tableau, SQL and Python.</p><ul class="tags"><li>Power BI</li><li>Tableau</li><li>SQL</li></ul></div>
+    <div class="card"><h3>Data Scientist</h3><p>Build and compare models for prediction, clustering and language tasks, then ship them as usable apps.</p><ul class="tags"><li>Scikit-learn</li><li>PyTorch</li><li>LangChain</li></ul></div>
+    <div class="card"><h3>Business Analyst</h3><p>Turn business needs into clear indicators and decision-support tools that teams can rely on.</p><ul class="tags"><li>KPIs</li><li>Reporting</li><li>Jira</li></ul></div>
+  </div>
+  <ol class="steps">
+    <li><b>Understand</b><span>Clarify the question, the users and what success means.</span></li>
+    <li><b>Explore</b><span>Check the data and set a baseline.</span></li>
+    <li><b>Build</b><span>Model, dashboard or tool, measured on agreed metrics.</span></li>
+    <li><b>Hand over</b><span>Documentation and a walkthrough for the team.</span></li>
+  </ol>
+</div></section>
+
+<section id="experience" class="band"><div class="wrap">
+  <h2>Experience, education &amp; toolbox</h2>
+  <div class="tabs" role="group" aria-label="Choose a section" style="margin-top:1.5rem">
+    <button type="button" data-p="exp" aria-pressed="true">Experience</button>
+    <button type="button" data-p="edu" aria-pressed="false">Education</button>
+    <button type="button" data-p="tool" aria-pressed="false">Toolbox</button>
+  </div>
+  <div class="panel" id="exp"><ul class="tl">
+    <li><div class="when">Dec 2025 – May 2026</div><div><h3>SDCG, consulting and management firm</h3><div class="role">Data Consultant (fixed-term)</div><ul><li>Designed financial tracking dashboards.</li><li>Built an intelligent tool to extract data from financial documents.</li></ul></div></li>
+    <li><div class="when">Mar – Aug 2025</div><div><h3>BNP Paribas IMEX, Paris</h3><div class="role">Final-year internship</div><ul><li>Set up decision-support tools.</li><li>Automated regulatory document analysis with a GPT-4 RAG pipeline and Streamlit interface.</li></ul></div></li>
+    <li><div class="when">Jun – Aug 2024</div><div><h3>iTransform365</h3><div class="role">Data Scientist (summer internship)</div><ul><li>Studied the Transformers architecture.</li><li>Clustered countries to prioritise humanitarian aid.</li><li>Compared machine learning models on a churn use case.</li></ul></div></li>
+    <li><div class="when">Feb – May 2023</div><div><h3>HLI Consulting</h3><div class="role">Final-year internship (bachelor's)</div><ul><li>Delivered a full decision-support solution with SSIS, SSMS and Power BI.</li></ul></div></li>
+  </ul></div>
+  <div class="panel" id="edu" hidden><ul class="tl">
+    <li><div class="when">2023 – 2025</div><div><h3>M.Sc. Data Science &amp; Artificial Intelligence</h3><div class="role">Université Paris Dauphine – PSL</div><small>Machine learning, deep learning, NLP, LLMs, generative AI, computer vision, optimisation, statistics, cloud, big data, RAG.</small></div></li>
+    <li><div class="when">2020 – 2023</div><div><h3>Bachelor's in Business Computing</h3><div class="role">Institut Supérieur de Gestion · Business Intelligence track</div></div></li>
+    <li><div class="when">Certifications</div><div><h3>Dataiku, Generative AI Practitioner</h3><div class="role">AWS Academy Graduate, Machine Learning Foundations</div></div></li>
+  </ul></div>
+  <div class="panel" id="tool" hidden><div class="tools">
+    <div><h3>Analysis &amp; visualisation</h3><ul class="tags"><li>Power BI</li><li>Tableau</li><li>IBM Cognos</li><li>Pandas</li><li>Matplotlib</li><li>Seaborn</li></ul></div>
+    <div><h3>Databases</h3><ul class="tags"><li>SQL Server</li><li>SSIS</li><li>SSMS</li><li>PostgreSQL</li><li>Databricks</li><li>Spark</li></ul></div>
+    <div><h3>ML &amp; AI</h3><ul class="tags"><li>Scikit-learn</li><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>Hugging Face</li><li>LangChain</li><li>NLTK</li><li>SpaCy</li></ul></div>
+    <div><h3>Languages &amp; dev</h3><ul class="tags"><li>Python</li><li>R</li><li>C</li><li>Django</li><li>FastAPI</li><li>Streamlit</li><li>Docker</li><li>Git</li></ul></div>
+    <div><h3>Cloud &amp; platforms</h3><ul class="tags"><li>GCP</li><li>Dataiku</li><li>AWS</li></ul></div>
+    <div><h3>Project management</h3><ul class="tags"><li>Jira</li><li>Confluence</li></ul></div>
+  </div></div>
+</div></section>
+
+<section id="moments"><div class="wrap">
+  <h2>Recognition &amp; moments</h2>
+  <p class="sub">Add your photos in the <code>images</code> folder with the file names below. Until then, a placeholder is shown.</p>
+  <div class="gallery">
+    <figure><div class="ph"><span class="badge-photo">2nd place</span>images/hackathon.jpg<img src="images/hackathon.jpg" alt="Nadia and her team at the Hack for Care and Culture with AI hackathon" onerror="this.remove()"></div>
+      <figcaption>Hack for Care and Culture with AI<small>ALZA, an assistant app for Alzheimer's patients · Paris-Dauphine, Tunis</small></figcaption></figure>
+    <figure><div class="ph">images/university.jpg<img src="images/university.jpg" alt="Nadia at Université Paris Dauphine – PSL" onerror="this.remove()"></div>
+      <figcaption>Université Paris Dauphine – PSL<small>M.Sc. Data Science &amp; AI, 2023–2025</small></figcaption></figure>
+    <figure><div class="ph">images/club.jpg<img src="images/club.jpg" alt="Club Tunis Méditerranée" onerror="this.remove()"></div>
+      <figcaption>Club Tunis Méditerranée<small>Communication lead and deputy secretary, 2021–2025</small></figcaption></figure>
+    <figure><div class="ph">images/bde.jpg<img src="images/bde.jpg" alt="Dauphine student office" onerror="this.remove()"></div>
+      <figcaption>Dauphine student office (BDE)<small>Member, 2023–2024</small></figcaption></figure>
+  </div>
+</div></section>
+
+<section id="contact" class="band"><div class="wrap contact">
+  <h2>Have a data problem worth solving?</h2>
+  <p class="sub">I'm looking for my next role in data science, data analysis or business analysis. Send me a message, I reply quickly.</p>
+  <div class="cta">
+    <a class="btn" href="mailto:nadia.benyoussef@outlook.com">nadia.benyoussef@outlook.com</a>
+    <!-- TODO: replace # with your real links -->
+    <a class="btn ghost" href="#">LinkedIn</a><a class="btn ghost" href="#">GitHub</a><a class="btn ghost" href="#">Kaggle</a>
+  </div>
+</div></section>
+</main>
+<footer>© 2026 Nadia Ben Youssef</footer>
+
+<script>
+document.querySelectorAll('.tabs').forEach(group => {
+  const btns = group.querySelectorAll('button');
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.setAttribute('aria-pressed', x === b));
+    if (b.dataset.f) {
+      document.querySelectorAll('.projects .card').forEach(c =>
+        c.classList.toggle('hide', b.dataset.f !== 'all' && !c.dataset.roles.split(' ').includes(b.dataset.f)));
+    }
+    if (b.dataset.p) {
+      document.querySelectorAll('.panel').forEach(p => p.hidden = p.id !== b.dataset.p);
+    }
+  }));
+});
+</script>
+</body>
+</html>
